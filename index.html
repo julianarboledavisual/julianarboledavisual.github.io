@@ -15,181 +15,151 @@
     <body class="is-preload">
 
         <!-- Header -->
-            <header id="header" style="background: #e6e8eb !important; border-bottom: 1px solid #dcdee2 !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;">
-        
-        <h1 style="display: flex !important; align-items: center !important; gap: 14px !important; height: 100% !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important;">
+        <header id="header" style="background: #e6e8eb !important; border-bottom: 1px solid #dcdee2 !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;">
+            <h1 style="display: flex !important; align-items: center !important; gap: 14px !important; height: 100% !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important;">
+                <img src="logo_motionchuaz.svg" alt="Motion Chuaz Logo" style="width: 65px !important; height: auto !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; padding: 0 !important;" />
+                <span style="font-weight: 700 !important; font-size: 1.2rem !important; color: #2c2e33 !important; letter-spacing: -0.5px !important;">Julian Arboleda</span>
+            </h1>
             
-            <!-- LOGO TEXTO NEGRO: Mantiene el contraste perfecto sobre el nuevo fondo quemado -->
-            <img src="logo_motionchuaz.svg" alt="Motion Chuaz Logo" style="width: 65px !important; height: auto !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; padding: 0 !important;" />
-            
-            <span style="font-weight: 700 !important; font-size: 1.2rem !important; color: #2c2e33 !important; letter-spacing: -0.5px !important;">Julian Arboleda</span>
-        
-        </h1>
-        
-        <nav>
-            <ul>
-                <li><a href="#intro">Who I Am</a></li>
-                <li><a href="#one">Motion</a></li>
-                <li><a href="#two">Design</a></li>
-                <li><a href="#work">Illustration</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-        <section id="intro" class="main style1 dark fullscreen" style="position: relative; overflow: hidden; background: #0d0f12 !important; background-image: none !important;">
-        
-        <!-- VIDEO DE FONDO: Opacidad al 100% para que se vea idéntico a tu render de After Effects -->
-        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 1 !important;">
-            <source src="assets/video/fondo_portafolio_motion_julian.mp4" type="video/mp4">
-        </video>
-
-        <!-- CAPA DE OSCURECIMIENTO (OVERLAY): Si tus textos blancos se pierden con el video, 
-             descomenta la línea de abajo (borrando las flechas de comentario) para oscurecer el fondo un 40% de forma limpia -->
-        <!-- <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 15, 18, 0.4); z-index: 1;"></div> -->
-
-        <!-- CONTENIDO: Flota arriba de todo (z-index: 2) -->
-        <div class="content" style="position: relative; z-index: 2;">
-            
-            <header style="margin-top: -3.5rem !important; margin-bottom: 0.8rem !important; padding: 0 !important;">
-                <!-- LOGO TEXTO BLANCO -->
-                <img src="logo_motionchuaz2.svg" alt="Motion Chuaz Logo" style="width: 200px; height: auto; margin-bottom: 0.1rem !important; display: inline-block;" />
-                <h2 style="margin-top: 0 !important; margin-bottom: 0 !important; line-height: 1;">Julian Arboleda</h2>
-            </header>
-            
-            <p style="font-size: 1.25rem; line-height: 1.6; max-width: 750px; margin: 0 auto 1.5rem auto;">
-                <strong>Visual &amp; Motion Designer.</strong><br />
-                Specialized in high-impact motion graphics, digital illustration, and core visual assets for international brands and digital pipelines.
-            </p>
-            
-            <footer style="margin-top: 1rem !important;">
-                <span style="display: block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.6; font-weight: bold;">Watch Showreel</span>
-                <a href="#one" class="button style2 down"><span style="display: none;">View Showreel</span></a>
-            </footer>
-            
-        </div>
-    </section>
-
-<!-- One (Showreel) -->
-<section id="one" style="position: relative !important; min-height: 100vh !important; height: auto !important; padding-top: 4.5rem !important; padding-bottom: 1.5rem !important; box-sizing: border-box !important; background-image: linear-gradient(rgba(13, 15, 18, 0.3), rgba(13, 15, 18, 0.3)), url('assets/images/fondo_reel.jpg') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
-    
-    <div style="width: 100% !important; max-width: 950px !important; margin: 0 auto !important; text-align: center !important; padding: 0 1.5rem !important; background: transparent !important; box-shadow: none !important; border: 0 !important;">
-        
-        <header style="margin-bottom: 0.8rem !important; margin-top: 0 !important;">
-            <h2 style="font-size: 2rem !important; margin: 0 !important; line-height: 1 !important; color: #ffffff !important; font-weight: 700 !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;">Showreel</h2>
+            <nav>
+                <ul>
+                    <!-- Se eliminó 'Who I Am' para dejar un menú directo y profesional -->
+                    <li><a href="#one">Motion</a></li>
+                    <li><a href="#work">Illustration</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <!-- Reproductor de Vimeo Limpio (Sin sombras externas) -->
-        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 58vh; margin: 0 auto 1rem auto; overflow: hidden; border-radius: 8px; box-shadow: none !important; background: transparent !important;">
-            <iframe src="https://player.vimeo.com/video/1228911549?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; box-shadow: none !important;"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    title="Julian Arboleda - Showreel">
-            </iframe>
-        </div>
+        <!-- Intro Section -->
+        <section id="intro" class="main style1 dark fullscreen" style="position: relative; overflow: hidden; background: #0d0f12 !important; background-image: none !important;">
+            <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 1 !important;">
+                <source src="assets/video/fondo_portafolio_motion_julian.mp4" type="video/mp4">
+            </video>
 
-        <!-- Indicador de Scroll -->
-        <a href="#two" style="display: inline-block; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: color 0.3s ease; text-shadow: 0 1px 5px rgba(0,0,0,0.8);">
-            <span style="display: block; margin-bottom: 0.2rem;">Scroll Down</span>
-            <span style="font-size: 1.1rem; display: block; line-height: 1;">↓</span>
-        </a>
+            <div class="content" style="position: relative; z-index: 2;">
+                <header style="margin-top: -3.5rem !important; margin-bottom: 0.8rem !important; padding: 0 !important;">
+                    <img src="logo_motionchuaz2.svg" alt="Motion Chuaz Logo" style="width: 200px; height: auto; margin-bottom: 0.1rem !important; display: inline-block;" />
+                    <h2 style="margin-top: 0 !important; margin-bottom: 0 !important; line-height: 1;">Julian Arboleda</h2>
+                </header>
+                
+                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 750px; margin: 0 auto 1.5rem auto;">
+                    <strong>Visual &amp; Motion Designer.</strong><br />
+                    Specialized in high-impact motion graphics, digital illustration, and core visual assets for international brands and digital pipelines.
+                </p>
+                
+                <footer style="margin-top: 1rem !important;">
+                    <span style="display: block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.6; font-weight: bold;">Watch Showreel</span>
+                    <a href="#one" class="button style2 down"><span style="display: none;">View Showreel</span></a>
+                </footer>
+            </div>
+        </section>
 
-    </div>
-</section>
+        <!-- One (Showreel) -->
+        <section id="one" style="position: relative !important; min-height: 100vh !important; height: auto !important; padding-top: 4.5rem !important; padding-bottom: 1.5rem !important; box-sizing: border-box !important; background-image: linear-gradient(rgba(13, 15, 18, 0.3), rgba(13, 15, 18, 0.3)), url('assets/images/fondo_reel.jpg') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
+            <div style="width: 100% !important; max-width: 950px !important; margin: 0 auto !important; text-align: center !important; padding: 0 1.5rem !important; background: transparent !important; box-shadow: none !important; border: 0 !important;">
+                
+                <header style="margin-bottom: 0.8rem !important; margin-top: 0 !important;">
+                    <h2 style="font-size: 2rem !important; margin: 0 !important; line-height: 1 !important; color: #ffffff !important; font-weight: 700 !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;">Showreel</h2>
+                </header>
 
-        <!-- Two -->
-            <section id="two" class="main style2 left dark fullscreen">
-                <div class="content box style2">
-                    <header>
-                        <h2>Who I Am</h2>
-                    </header>
+                <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 58vh; margin: 0 auto 1rem auto; overflow: hidden; border-radius: 8px; box-shadow: none !important; background: transparent !important;">
+                    <iframe src="https://player.vimeo.com/video/1228911549?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; box-shadow: none !important;"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                            title="Julian Arboleda - Showreel">
+                    </iframe>
+                </div>
+
+                <!-- Redirigido a #work en lugar de #two -->
+                <a href="#work" style="display: inline-block; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: color 0.3s ease; text-shadow: 0 1px 5px rgba(0,0,0,0.8);">
+                    <span style="display: block; margin-bottom: 0.2rem;">Scroll Down</span>
+                    <span style="font-size: 1.1rem; display: block; line-height: 1;">↓</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Work (Galería / Ilustración) -->
+        <section id="work" class="main style3 primary">
+            <div class="content">
+                <header>
+                    <h2>My Work</h2>
                     <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-                    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-                    id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-                </div>
-                <a href="#work" class="button style2 down anchored"><span style="display: none;">Next</span></a>
-            </section>
+                    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+                    arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+                </header>
 
-        <!-- Work -->
-            <section id="work" class="main style3 primary">
-                <div class="content">
-                    <header>
-                        <h2>My Work</h2>
-                        <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-                        Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-                        arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
-                    </header>
-
-                    <!-- Gallery -->
-                        <div class="gallery">
-                            <article class="from-left">
-                                <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
-                            </article>
-                            <article class="from-right">
-                                <a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-                            </article>
-                            <article class="from-left">
-                                <a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-                            </article>
-                            <article class="from-right">
-                                <a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-                            </article>
-                            <article class="from-left">
-                                <a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-                            </article>
-                            <article class="from-right">
-                                <a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-                            </article>
-                        </div>
+                <!-- Gallery -->
+                <div class="gallery">
+                    <article class="from-left">
+                        <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+                    </article>
+                    <article class="from-right">
+                        <a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+                    </article>
+                    <article class="from-left">
+                        <a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
+                    </article>
+                    <article class="from-right">
+                        <a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
+                    </article>
+                    <article class="from-left">
+                        <a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
+                    </article>
+                    <article class="from-right">
+                        <a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
+                    </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <!-- Contact -->
-            <section id="contact" class="main style3 secondary">
-                <div class="content">
-                    <header>
-                        <h2>Say Hello.</h2>
-                        <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-                    </header>
-                    <div class="box">
-                        <form method="post" action="#">
-                            <div class="fields">
-                                <div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-                                <div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-                                <div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-                            </div>
-                            <ul class="actions special">
-                                <li><input type="submit" value="Send Message" /></li>
-                            </ul>
-                        </form>
-                    </div>
+        <section id="contact" class="main style3 secondary">
+            <div class="content">
+                <header>
+                    <h2>Say Hello.</h2>
+                    <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+                </header>
+                <div class="box">
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half"><input type="text" name="name" placeholder="Name" /></div>
+                            <div class="field half"><input type="email" name="email" placeholder="Email" /></div>
+                            <div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+                        </div>
+                        <ul class="actions special">
+                            <li><input type="submit" value="Send Message" /></li>
+                        </ul>
+                    </form>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <!-- Footer -->
-            <footer id="footer">
-                    <ul class="icons">
-                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                        <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-                    </ul>
-                    <ul class="menu">
-                        <li>&copy; Julian Arboleda</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                    </ul>
-            </footer>
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+            </ul>
+            <ul class="menu">
+                <li>&copy; Julian Arboleda</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
 
         <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/jquery.poptrox.min.js"></script>
-            <script src="assets/js/jquery.scrolly.min.js"></script>
-            <script src="assets/js/jquery.scrollex.min.js"></script>
-            <script src="assets/js/browser.min.js"></script>
-            <script src="assets/js/breakpoints.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
     </body>
 </html>
