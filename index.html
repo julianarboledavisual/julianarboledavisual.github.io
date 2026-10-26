@@ -11,21 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-        <!-- DESACTIVAR EL CUADRO GIRATORIO (LOADER) PARA EVITAR CONGELAMIENTOS -->
-        <style>
-            body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-                animation: none !important;
-                transition: none !important;
-            }
-            body.is-preload #wrapper:before {
-                display: none !important;
-                content: none !important;
-            }
-            body #wrapper:before {
-                display: none !important;
-            }
-        </style>
     </head>
     <body class="is-preload">
 
@@ -99,7 +84,7 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Grilla de proyectos en 2 columnas con Opción B (Efecto Behance / Hover Overlay) -->
+                <!-- Grilla de proyectos en 2 columnas con "View Project" -->
                 <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
@@ -109,7 +94,7 @@
                                 <div class="behance-overlay">
                                     <div class="overlay-content">
                                         <h3>Ana Banana Regalos</h3>
-                                        <span>Ver Caso de Estudio &rarr;</span>
+                                        <span>View Project &rarr;</span>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +110,7 @@
                                 <div class="behance-overlay">
                                     <div class="overlay-content">
                                         <h3>Alianza</h3>
-                                        <span>Ver Caso de Estudio &rarr;</span>
+                                        <span>View Project &rarr;</span>
                                     </div>
                                 </div>
                             </div>
@@ -464,7 +449,6 @@
 
         <!-- MOTOR JAVASCRIPT -->
         <script>
-            // Forzar remover clase is-preload al cargar la ventana
             window.addEventListener('load', function() {
                 document.body.classList.remove('is-preload');
             });
