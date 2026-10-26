@@ -87,12 +87,11 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Gallery Design (Ana Banana - Botón directo sin enlaces falsos) -->
+                <!-- Gallery Design (Ana Banana - Minuatura completa sin recortes y con el efecto sombra chulo) -->
                 <div class="gallery">
                     <article class="from-left">
                         <button type="button" class="btn-card-project" onclick="openModal('modal-ana-banana')">
                             <img src="images/thumbs/ana-banana-logo.jpg" alt="Ana Banana Logo" />
-                            <span class="project-title-overlay">Ana Banana Regalos</span>
                         </button>
                     </article>
                 </div>
@@ -112,9 +111,14 @@
                         <p>Branding, Packaging & Ilustración</p>
                     </header>
 
-                    <!-- Imagen larga con todo el caso de estudio -->
+                    <!-- Imagen larga de caso de estudio a ancho completo de la caja -->
                     <div class="project-block">
                         <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
+                    </div>
+
+                    <!-- Indicador visual flotante para avisar al usuario que hay que scrolear -->
+                    <div class="scroll-indicator">
+                        <span>Desliza para ver todo el proyecto ↓</span>
                     </div>
                 </div>
             </div>
@@ -198,9 +202,9 @@
             </ul>
         </footer>
 
-        <!-- ESTILOS VISUALES PARA LAS MINIATURAS Y EL MODAL -->
+        <!-- ESTILOS CSS CORREGIDOS -->
         <style>
-        /* Estilo limpio para el botón de la miniatura que evita interferencias */
+        /* Botón de miniatura con tu animación de sombra al pasar el cursor */
         .btn-card-project {
             background: none;
             border: none;
@@ -211,21 +215,24 @@
             text-align: left;
             position: relative;
             overflow: hidden;
-            border-radius: 6px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .btn-card-project:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
+        /* Garantiza que la miniatura se vea completa sin recortes extraños */
         .btn-card-project img {
             width: 100% !important;
             height: auto !important;
             display: block;
-            border-radius: 6px;
+            border-radius: 8px;
+            object-fit: contain !important;
         }
 
-        /* Fondo oscuro translúcido detrás de la ventana */
+        /* Fondo oscuro translúcido de la ventana emergente */
         .custom-modal {
             display: none; 
             position: fixed; 
@@ -236,16 +243,20 @@
             backdrop-filter: blur(5px);
             overflow-y: auto;
         }
+
+        /* Ventana blanca interior optimizada para que la imagen toque los bordes laterales sin espacios vacíos */
         .modal-content {
             position: relative;
             background-color: #ffffff;
             margin: 3% auto;
-            padding: 2.5rem;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
             width: 90%;
-            max-width: 900px;
+            max-width: 1000px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
+
+        /* Botón de cierre (X) */
         .close-btn {
             position: absolute;
             top: 15px; right: 25px;
@@ -253,21 +264,57 @@
             font-size: 32px;
             font-weight: bold;
             cursor: pointer;
+            z-index: 10;
         }
         .close-btn:hover { color: #e74c3c; }
-        .modal-header { text-align: center; margin-bottom: 2rem; }
-        .modal-header h2 { color: #1c1e22 !important; font-size: 1.8rem; margin-bottom: 0.3rem; }
+
+        /* Encabezados dentro del modal */
+        .modal-header { text-align: center; margin-bottom: 1.5rem; }
+        .modal-header h2 { color: #1c1e22 !important; font-size: 1.8rem; margin-bottom: 0.2rem; }
         .modal-header p { color: #666; font-size: 0.95rem; }
-        .case-study-scroll .project-block { margin-bottom: 1.5rem; }
-        .case-study-scroll img { width: 100%; height: auto; display: block; border-radius: 6px; }
-        
-        /* Bloquear por completo cualquier lightbox viejo de la plantilla */
+
+        /* Contenedor de la imagen de proyecto */
+        .case-study-scroll .project-block {
+            width: 100%;
+        }
+        .case-study-scroll img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* Indicador flotante para avisar que hay contenido abajo (Scroll) */
+        .scroll-indicator {
+            text-align: center;
+            background: linear-gradient(to top, rgba(28,30,34,0.95), rgba(28,30,34,0.85));
+            color: #ffffff;
+            padding: 0.8rem;
+            margin-top: -10px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            animation: bounceIndicator 2s infinite;
+        }
+
+        @keyframes bounceIndicator {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* Bloquear por completo cualquier script viejo */
         .poptrox-popup, .image-overlay, .zoom-overlay {
             display: none !important;
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT PARA ABRIR Y CERRAR EL MODAL -->
+        <!-- MOTOR JAVASCRIPT -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -289,7 +336,7 @@
         <script src="assets/js/jquery.poptrox.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
         <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/browser.min.js`,"></script>
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
