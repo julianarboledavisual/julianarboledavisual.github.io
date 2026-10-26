@@ -79,7 +79,7 @@
             </div>
         </section>
 
-        <!-- Work (Visual & Brand Design) -->
+        <!-- Work (Visual & Brand Design) - ACTUALIZADO CON ANA BANANA -->
         <section id="work" class="main style3 primary">
             <div class="content">
                 <header>
@@ -87,31 +87,37 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Gallery Design -->
+                <!-- Gallery Design (Miniatura horizontal con tu textura y logo) -->
                 <div class="gallery">
                     <article class="from-left">
-                        <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="Brand Identity System" alt="" /></a>
-                    </article>
-                    <article class="from-right">
-                        <a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Visual Assets &amp; Guidelines" alt="" /></a>
-                    </article>
-                    <article class="from-left">
-                        <a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Commercial &amp; Print Media" alt="" /></a>
-                    </article>
-                    <article class="from-right">
-                        <a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Logo &amp; Typography Design" alt="" /></a>
-                    </article>
-                    <article class="from-left">
-                        <a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="Packaging &amp; Environmental Graphics" alt="" /></a>
-                    </article>
-                    <article class="from-right">
-                        <a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Digital &amp; Social Assets" alt="" /></a>
+                        <a href="javascript:void(0)" class="image fit custom-thumb" onclick="openModal('modal-ana-banana')">
+                            <img src="images/thumbs/ana-banana-logo.jpg" title="Ana Banana Regalos" alt="Ana Banana Logo" />
+                        </a>
                     </article>
                 </div>
             </div>
 
             <a href="#illustration" class="button style2 down anchored"><span style="display: none;">Next</span></a>
         </section>
+
+        <!-- VENTANA FLOTANTE (MODAL) PROYECTO: ANA BANANA -->
+        <div id="modal-ana-banana" class="custom-modal" onclick="closeModalOnOuterClick(event, 'modal-ana-banana')">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-ana-banana')">&times;</span>
+                
+                <div class="case-study-scroll">
+                    <header class="modal-header">
+                        <h2>Ana Banana Regalos</h2>
+                        <p>Branding, Packaging & Ilustración</p>
+                    </header>
+
+                    <!-- Imagen larga con todo el caso de estudio -->
+                    <div class="project-block">
+                        <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Illustration (Digital & Visual Illustration) -->
         <section id="illustration" class="main style3 primary">
@@ -191,7 +197,67 @@
             </ul>
         </footer>
 
-        <!-- Scripts -->
+        <!-- ESTILOS VISUALES PARA LAS MINIATURAS Y EL MODAL -->
+        <style>
+        .custom-thumb img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+        .custom-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 10000; 
+            left: 0; top: 0;
+            width: 100%; height: 100%; 
+            background-color: rgba(15, 17, 23, 0.9);
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+        }
+        .modal-content {
+            position: relative;
+            background-color: #ffffff;
+            margin: 3% auto;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 25px;
+            color: #1c1e22;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-btn:hover { color: #e74c3c; }
+        .modal-header { text-align: center; margin-bottom: 2rem; }
+        .modal-header h2 { color: #1c1e22 !important; font-size: 1.8rem; margin-bottom: 0.3rem; }
+        .modal-header p { color: #666; font-size: 0.95rem; }
+        .case-study-scroll .project-block { margin-bottom: 1.5rem; }
+        .case-study-scroll img { width: 100%; height: auto; display: block; border-radius: 6px; }
+        </style>
+
+        <!-- MOTOR JAVASCRIPT PARA ABRIR Y CERRAR EL MODAL -->
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+            function closeModalOnOuterClick(event, modalId) {
+                if (event.target.id === modalId) {
+                    closeModal(modalId);
+                }
+            }
+        </script>
+
+        <!-- Scripts originales -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.poptrox.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
