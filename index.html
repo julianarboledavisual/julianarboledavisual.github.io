@@ -15,10 +15,10 @@
     <body class="is-preload">
 
         <!-- Header -->
-        <header id="header" style="background: #e6e8eb !important; border-bottom: 1px solid #dcdee2 !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;">
-            <h1 style="display: flex !important; align-items: center !important; gap: 14px !important; height: 100% !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important;">
+        <header id="header">
+            <h1>
                 <img src="logo_motionchuaz.svg" alt="Motion Chuaz Logo" style="width: 65px !important; height: auto !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; padding: 0 !important;" />
-                <span style="font-weight: 700 !important; font-size: 1.2rem !important; color: #2c2e33 !important; letter-spacing: -0.5px !important;">Julian Arboleda</span>
+                <span>Julian Arboleda</span>
             </h1>
             
             <nav>
@@ -84,21 +84,21 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Grilla de proyectos en 2 columnas -->
-                <div class="custom-gallery-grid">
+                <!-- Grilla de proyectos respetando las clases nativas de animación de la plantilla -->
+                <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
-                        <button type="button" class="btn-card-project" onclick="openModal('modal-ana-banana')">
+                        <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-ana-banana'); return false;">
                             <img src="images/thumbs/ana-banana-logo.jpg" alt="Ana Banana Logo" />
-                        </button>
+                        </a>
                     </article>
 
-                    <!-- Espacio para el siguiente proyecto -->
+                    <!-- Espacio para el próximo proyecto -->
                     <!--
                     <article class="from-right custom-card-article">
-                        <button type="button" class="btn-card-project" onclick="openModal('modal-alianza')">
+                        <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-alianza'); return false;">
                             <img src="images/thumbs/alianza-logo.jpg" alt="Alianza Logo" />
-                        </button>
+                        </a>
                     </article>
                     -->
                 </div>
@@ -234,13 +234,13 @@
             }
         }
 
-        .btn-card-project {
+        /* Enlace de la miniatura integrado con clases nativas para que la plantilla reconozca las animaciones */
+        .custom-thumb-link {
             background: none !important;
             border: none !important;
             padding: 0 !important;
             width: 100% !important;
             height: auto !important;
-            cursor: pointer !important;
             display: block !important;
             position: relative !important;
             overflow: hidden !important;
@@ -249,12 +249,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease !important;
         }
 
-        .btn-card-project:hover {
+        .custom-thumb-link:hover {
             transform: translateY(-6px) !important;
             box-shadow: 0 18px 35px rgba(0,0,0,0.22) !important;
         }
 
-        .btn-card-project img {
+        .custom-thumb-link img {
             width: 100% !important;
             height: auto !important;
             display: block !important;
@@ -404,7 +404,7 @@
             }
         </script>
 
-        <!-- SCRIPTS REORDENADOS: jQuery va primero para que scrolly funcione en todas las secciones -->
+        <!-- Scripts originales de la plantilla -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
         <script src="assets/js/jquery.scrollex.min.js"></script>
