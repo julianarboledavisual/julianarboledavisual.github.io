@@ -21,13 +21,15 @@
                 <span style="font-weight: 700 !important; font-size: 1.2rem !important; color: #2c2e33 !important; letter-spacing: -0.5px !important;">Julian Arboleda</span>
             </h1>
             
-            <nav>
+            <nav style="display: flex; align-items: center; gap: 15px;">
                 <ul>
-                    <li><a href="#one" class="smooth-scroll">Motion</a></li>
-                    <li><a href="#work" class="smooth-scroll">Design</a></li>
-                    <li><a href="#illustration" class="smooth-scroll">Illustration</a></li>
-                    <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+                    <li><a href="#one" class="smooth-scroll" data-es="Motion" data-en="Motion">Motion</a></li>
+                    <li><a href="#work" class="smooth-scroll" data-es="Diseño" data-en="Design">Design</a></li>
+                    <li><a href="#illustration" class="smooth-scroll" data-es="Ilustración" data-en="Illustration">Illustration</a></li>
+                    <li><a href="#contact" class="smooth-scroll" data-es="Contacto" data-en="Contact">Contact</a></li>
                 </ul>
+                <!-- Botón selector de idioma -->
+                <button id="lang-toggle-btn" onclick="toggleLanguage()" title="Cambiar idioma / Change language">EN</button>
             </nav>
         </header>
 
@@ -43,13 +45,15 @@
                     <h2 style="margin-top: 0 !important; margin-bottom: 0 !important; line-height: 1;">Julian Arboleda</h2>
                 </header>
                 
-                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 750px; margin: 0 auto 1.5rem auto;">
+                <p style="font-size: 1.25rem; line-height: 1.6; max-width: 750px; margin: 0 auto 1.5rem auto;" 
+                   data-es="<strong>Diseñador Visual y de Motion Graphics.</strong><br />Especializado en motion graphics de alto impacto, ilustración digital y activos visuales clave para marcas internacionales y pipelines digitales." 
+                   data-en="<strong>Visual &amp; Motion Designer.</strong><br />Specialized in high-impact motion graphics, digital illustration, and core visual assets for international brands and digital pipelines.">
                     <strong>Visual &amp; Motion Designer.</strong><br />
                     Specialized in high-impact motion graphics, digital illustration, and core visual assets for international brands and digital pipelines.
                 </p>
                 
                 <footer style="margin-top: 1rem !important;">
-                    <span style="display: block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.6; font-weight: bold;">Watch Showreel</span>
+                    <span style="display: block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.6; font-weight: bold;" data-es="Ver Showreel" data-en="Watch Showreel">Watch Showreel</span>
                     <a href="#one" class="button style2 down smooth-scroll"><span style="display: none;">View Showreel</span></a>
                 </footer>
             </div>
@@ -60,7 +64,7 @@
             <div style="width: 100% !important; max-width: 950px !important; margin: 0 auto !important; text-align: center !important; padding: 0 1.5rem !important; background: transparent !important; box-shadow: none !important; border: 0 !important;">
                 
                 <header style="margin-bottom: 0.8rem !important; margin-top: 0 !important;">
-                    <h2 style="font-size: 2rem !important; margin: 0 !important; line-height: 1 !important; color: #ffffff !important; font-weight: 700 !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;">Showreel</h2>
+                    <h2 style="font-size: 2rem !important; margin: 0 !important; line-height: 1 !important; color: #ffffff !important; font-weight: 700 !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;" data-es="Showreel" data-en="Showreel">Showreel</h2>
                 </header>
 
                 <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 58vh; margin: 0 auto 1rem auto; overflow: hidden; border-radius: 8px; box-shadow: none !important; background: transparent !important;">
@@ -80,11 +84,14 @@
         <section id="work" class="main style3 primary">
             <div class="content">
                 <header>
-                    <h2>Visual &amp; Brand Design</h2>
-                    <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
+                    <h2 data-es="Diseño Visual y de Marca" data-en="Visual &amp; Brand Design">Visual &amp; Brand Design</h2>
+                    <p data-es="Una selección curada de identidades visuales, sistemas de branding y diseño gráfico. Creadas para construir una presencia de marca fuerte, memorable y escalable en entornos físicos y digitales." 
+                       data-en="A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.">
+                        A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.
+                    </p>
                 </header>
 
-                <!-- Grilla de proyectos en 2 columnas con "View Project" -->
+                <!-- Grilla de proyectos -->
                 <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
@@ -94,29 +101,12 @@
                                 <div class="behance-overlay">
                                     <div class="overlay-content">
                                         <h3>Ana Banana Regalos</h3>
-                                        <span>View Project &rarr;</span>
+                                        <span data-es="Ver Proyecto &rarr;" data-en="View Project &rarr;">View Project &rarr;</span>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </article>
-
-                    <!-- Espacio listo para tu siguiente proyecto (Alianza) -->
-                    <!--
-                    <article class="from-right custom-card-article">
-                        <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-alianza'); return false;">
-                            <div class="behance-card-preview">
-                                <img src="images/projects/alianza-caso.jpg" alt="Alianza Preview" class="preview-img" />
-                                <div class="behance-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Alianza</h3>
-                                        <span>View Project &rarr;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    -->
                 </div>
             </div>
 
@@ -146,8 +136,11 @@
         <section id="illustration" class="main style3 primary">
             <div class="content">
                 <header>
-                    <h2>Digital &amp; Visual Illustration</h2>
-                    <p>A collection of digital artwork, character designs, and visual concepts. Crafted with detailed artistry for editorial, commercial, and personal creative projects.</p>
+                    <h2 data-es="Ilustración Digital y Visual" data-en="Digital &amp; Visual Illustration">Digital &amp; Visual Illustration</h2>
+                    <p data-es="Una colección de arte digital, diseño de personajes y conceptos visuales. Creadas con un detallado nivel artístico para proyectos editoriales, comerciales y personales." 
+                       data-en="A collection of digital artwork, character designs, and visual concepts. Crafted with detailed artistry for editorial, commercial, and personal creative projects.">
+                        A collection of digital artwork, character designs, and visual concepts. Crafted with detailed artistry for editorial, commercial, and personal creative projects.
+                    </p>
                 </header>
 
                 <!-- Gallery Illustration -->
@@ -180,23 +173,26 @@
         <section id="contact" class="main style3 secondary" style="padding-top: 6rem !important; padding-bottom: 3rem !important;">
             <div class="content">
                 <header style="margin-top: 0 !important; padding-top: 0.5rem !important;">
-                    <h2 style="font-size: 2.2rem !important; margin-bottom: 0.8rem !important; color: #1c1e22 !important;">Let's Work Together</h2>
-                    <p style="max-width: 680px; margin: 0 auto 2rem auto; line-height: 1.6;">Have a project in mind, a motion graphics inquiry, or want to build a visual identity? Send a message and let's bring your visual ideas to life.</p>
+                    <h2 style="font-size: 2.2rem !important; margin-bottom: 0.8rem !important; color: #1c1e22 !important;" data-es="Trabajemos Juntos" data-en="Let's Work Together">Let's Work Together</h2>
+                    <p style="max-width: 680px; margin: 0 auto 2rem auto; line-height: 1.6;" 
+                       data-es="¿Tienes un proyecto en mente, una consulta de motion graphics o quieres construir una identidad visual? Envía un mensaje y hagamos realidad tus ideas." 
+                       data-en="Have a project in mind, a motion graphics inquiry, or want to build a visual identity? Send a message and let's bring your visual ideas to life.">
+                        Have a project in mind, a motion graphics inquiry, or want to build a visual identity? Send a message and let's bring your visual ideas to life.
+                    </p>
                 </header>
                 <div class="box">
                     <form method="POST" action="https://formsubmit.co/julianarboledachuaz@gmail.com">
-                        <!-- Configuración automática de FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Nuevo mensaje desde el Portafolio!">
                         
                         <div class="fields">
-                            <div class="field half"><input type="text" name="name" placeholder="Name" required /></div>
-                            <div class="field half"><input type="email" name="email" placeholder="Email" required /></div>
-                            <div class="field"><textarea name="message" placeholder="Tell me about your project..." rows="6" required></textarea></div>
+                            <div class="field half"><input type="text" name="name" placeholder="Name" data-es-placeholder="Nombre" data-en-placeholder="Name" required /></div>
+                            <div class="field half"><input type="email" name="email" placeholder="Email" data-es-placeholder="Correo electrónico" data-en-placeholder="Email" required /></div>
+                            <div class="field"><textarea name="message" placeholder="Tell me about your project..." data-es-placeholder="Cuéntame sobre tu proyecto..." data-en-placeholder="Tell me about your project..." rows="6" required></textarea></div>
                         </div>
                         <ul class="actions special" style="margin-top: 1.5rem;">
                             <li>
-                                <button type="submit" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; background-color: #2c2e33 !important; color: #ffffff !important; border: none !important; border-radius: 30px !important; padding: 0 2.8rem !important; height: 3.2rem !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 2px !important; text-transform: uppercase !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; cursor: pointer !important; transition: all 0.3s ease !important;">
+                                <button type="submit" id="submit-btn" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; background-color: #2c2e33 !important; color: #ffffff !important; border: none !important; border-radius: 30px !important; padding: 0 2.8rem !important; height: 3.2rem !important; font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 2px !important; text-transform: uppercase !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; cursor: pointer !important; transition: all 0.3s ease !important;" data-es="Enviar Mensaje" data-en="Send Message">
                                     Send Message
                                 </button>
                             </li>
@@ -216,12 +212,31 @@
                 <li><a href="https://behance.net" class="icon brands fa-behance" target="_blank"><span class="label">Behance</span></a></li>
             </ul>
             <ul class="menu">
-                <li>&copy; Julian Arboleda. All rights reserved.</li><li>Visual &amp; Motion Design</li>
+                <li data-es="&copy; Julian Arboleda. Todos los derechos reservados." data-en="&copy; Julian Arboleda. All rights reserved.">&copy; Julian Arboleda. All rights reserved.</li>
+                <li data-es="Diseño Visual y de Motion" data-en="Visual &amp; Motion Design">Visual &amp; Motion Design</li>
             </ul>
         </footer>
 
         <!-- ESTILOS CSS -->
         <style>
+        /* Estilo elegante para el botón de cambio de idioma */
+        #lang-toggle-btn {
+            background: #2c2e33 !important;
+            color: #ffffff !important;
+            border: none !important;
+            padding: 6px 12px !important;
+            border-radius: 20px !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 1px !important;
+            cursor: pointer !important;
+            transition: background 0.2s ease, transform 0.2s ease !important;
+        }
+        #lang-toggle-btn:hover {
+            background: #f39c12 !important;
+            transform: scale(1.05) !important;
+        }
+
         .custom-gallery-grid {
             display: flex !important;
             flex-wrap: wrap !important;
@@ -447,11 +462,39 @@
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT -->
+        <!-- MOTOR JAVASCRIPT (TRADUCCIÓN + MODAL + SCROLL CINEMATOGRÁFICO) -->
         <script>
             window.addEventListener('load', function() {
                 document.body.classList.remove('is-preload');
             });
+
+            /* Lógica del selector de idioma */
+            let currentLang = 'en'; // Idioma por defecto
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'en' ? 'es' : 'en';
+                document.getElementById('lang-toggle-btn').innerText = currentLang === 'en' ? 'EN' : 'ES';
+                
+                // Traducir textos normales
+                const elements = document.querySelectorAll('[data-es]');
+                elements.forEach(el => {
+                    if (currentLang === 'es') {
+                        el.innerHTML = el.getAttribute('data-es');
+                    } else {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                });
+
+                // Traducir placeholders de formularios
+                const inputs = document.querySelectorAll('[data-es-placeholder]');
+                inputs.forEach(input => {
+                    if (currentLang === 'es') {
+                        input.setAttribute('placeholder', input.getAttribute('data-es-placeholder'));
+                    } else {
+                        input.setAttribute('placeholder', input.getAttribute('data-en-placeholder'));
+                    }
+                });
+            }
 
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
