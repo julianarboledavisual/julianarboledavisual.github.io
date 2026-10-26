@@ -371,7 +371,7 @@
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT PERSONALIZADO PARA SCROLL ULTRA SUAVE Y MODAL -->
+        <!-- MOTOR JAVASCRIPT CON VELOCIDAD LENTA Y CINEMATOGRÁFICA -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -402,7 +402,7 @@
                 }
             }
 
-            /* Desplazamiento ultra suave con control de velocidad personalizado */
+            /* Scroll ultra suave, pausado y cinematográfico (1400 milisegundos) */
             document.addEventListener("DOMContentLoaded", function() {
                 const links = document.querySelectorAll('a.smooth-scroll');
                 
@@ -417,7 +417,7 @@
                                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                                 const startPosition = window.pageYOffset;
                                 const distance = targetPosition - startPosition;
-                                const duration = 900; // Duración en milisegundos (900ms = transición suave y pausada)
+                                const duration = 1400; // 1400ms = Movimiento sumamente suave, pausado y elegante
                                 let start = null;
 
                                 function step(timestamp) {
@@ -425,10 +425,10 @@
                                     const progress = timestamp - start;
                                     const percentage = Math.min(progress / duration, 1);
                                     
-                                    // Curva de aceleración suave (EaseInOutCubic)
+                                    // Curva de aceleración ultra suave (EaseInOutQuart)
                                     const easing = percentage < 0.5 
-                                        ? 4 * percentage * percentage * percentage 
-                                        : (percentage - 1) * (2 * percentage - 2) * (2 * percentage - 2) + 1;
+                                        ? 8 * percentage * percentage * percentage * percentage 
+                                        : 1 - Math.pow(-2 * percentage + 2, 4) / 2;
 
                                     window.scrollTo(0, startPosition + distance * easing);
 
