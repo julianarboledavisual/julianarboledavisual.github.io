@@ -29,11 +29,11 @@
                     <li><a href="#contact" class="smooth-scroll" data-es="Contacto" data-en="Contact">Contact</a></li>
                 </ul>
 
-                <!-- Interruptor de idioma moderno con banderas -->
+                <!-- Interruptor de idioma (Opción 2: Colombia / USA) -->
                 <div class="lang-switch-container" onclick="toggleLanguage()" title="Cambiar idioma / Change language">
-                    <span id="lang-es" class="lang-option">🇪🇸 ES</span>
+                    <span id="lang-es" class="lang-option">🇨🇴 ESP</span>
                     <div id="lang-slider" class="lang-slider en"></div>
-                    <span id="lang-en" class="lang-option active">🇺🇸 EN</span>
+                    <span id="lang-en" class="lang-option active">🇺🇸 ENG</span>
                 </div>
             </nav>
         </header>
@@ -224,13 +224,13 @@
 
         <!-- ESTILOS CSS -->
         <style>
-        /* Estilos modernos para el interruptor deslizante de idiomas (Switch) */
+        /* Interruptor de idioma ajustado para Colombia / USA */
         .lang-switch-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
-            width: 78px;
+            width: 95px;
             height: 32px;
             background: #dcdfe3;
             border-radius: 20px;
@@ -254,7 +254,7 @@
             position: absolute;
             top: 3px;
             left: 3px;
-            width: 36px;
+            width: 44px;
             height: 26px;
             background: #2c2e33;
             border-radius: 16px;
@@ -263,7 +263,7 @@
             z-index: 1;
         }
         .lang-slider.es {
-            transform: translateX(36px);
+            transform: translateX(45px);
         }
         .lang-slider.en {
             transform: translateX(0);
