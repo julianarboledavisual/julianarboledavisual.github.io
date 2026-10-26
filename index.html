@@ -29,10 +29,10 @@
                     <li><a href="#contact" class="smooth-scroll" data-es="Contacto" data-en="Contact">Contact</a></li>
                 </ul>
 
-                <!-- Interruptor de idioma (Opción 2: Colombia / USA) -->
+                <!-- Interruptor de idioma sincronizado correctamente -->
                 <div class="lang-switch-container" onclick="toggleLanguage()" title="Cambiar idioma / Change language">
                     <span id="lang-es" class="lang-option">🇨🇴 ESP</span>
-                    <div id="lang-slider" class="lang-slider en"></div>
+                    <div id="lang-slider" class="lang-slider es"></div>
                     <span id="lang-en" class="lang-option active">🇺🇸 ENG</span>
                 </div>
             </nav>
@@ -224,7 +224,6 @@
 
         <!-- ESTILOS CSS -->
         <style>
-        /* Interruptor de idioma ajustado para Colombia / USA */
         .lang-switch-container {
             display: flex;
             align-items: center;
@@ -262,11 +261,12 @@
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
             z-index: 1;
         }
+        /* Corregido: 'es' se alinea a la izquierda (0) y 'en' a la derecha (45px) por defecto */
         .lang-slider.es {
-            transform: translateX(45px);
+            transform: translateX(0);
         }
         .lang-slider.en {
-            transform: translateX(0);
+            transform: translateX(45px);
         }
 
         .custom-gallery-grid {
@@ -500,8 +500,8 @@
                 document.body.classList.remove('is-preload');
             });
 
-            /* Lógica del interruptor deslizante de idioma */
-            let currentLang = 'en';
+            /* Lógica del interruptor sincronizada con el estado inicial (español por defecto) */
+            let currentLang = 'es';
 
             function toggleLanguage() {
                 currentLang = currentLang === 'en' ? 'es' : 'en';
@@ -574,6 +574,26 @@
 
             /* Scroll cinematográfico lento (1400ms) */
             document.addEventListener("DOMContentLoaded", function() {
+                // Al iniciar, forzamos que arranque en Español tal como está configurado en el HTML por defecto
+                currentLang = 'es';
+                const slider = document.getElementById('lang-slider');
+                const optEs = document.getElementById('lang-es');
+                const optEn = document.getElementById('lang-en');
+                slider.classList.remove('en');
+                slider.classList.add('es');
+                optEs.classList.add('active');
+                optEn.classList.remove('active');
+
+                // Aplicar textos en español de entrada
+                const elements = document.querySelectorAll('[data-es]');
+                elements.forEach(el => {
+                    el.innerHTML = el.getAttribute('data-es');
+                });
+                const inputs = document.querySelectorAll('[data-es-placeholder]');
+                inputs.forEach(input => {
+                    input.setAttribute('placeholder', input.getAttribute('data-es-placeholder'));
+                });
+
                 const links = document.querySelectorAll('a.smooth-scroll');
                 
                 links.forEach(link => {
