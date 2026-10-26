@@ -11,13 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        
-        <!-- Forzar desplazamiento suave nativo para corregir el salto de sección -->
-        <style>
-            html {
-                scroll-behavior: smooth !important;
-            }
-        </style>
     </head>
     <body class="is-preload">
 
@@ -30,10 +23,10 @@
             
             <nav>
                 <ul>
-                    <li><a href="#one">Motion</a></li>
-                    <li><a href="#work">Design</a></li>
-                    <li><a href="#illustration">Illustration</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#one" class="smooth-scroll">Motion</a></li>
+                    <li><a href="#work" class="smooth-scroll">Design</a></li>
+                    <li><a href="#illustration" class="smooth-scroll">Illustration</a></li>
+                    <li><a href="#contact" class="smooth-scroll">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -57,7 +50,7 @@
                 
                 <footer style="margin-top: 1rem !important;">
                     <span style="display: block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.6; font-weight: bold;">Watch Showreel</span>
-                    <a href="#one" class="button style2 down scrolly"><span style="display: none;">View Showreel</span></a>
+                    <a href="#one" class="button style2 down smooth-scroll"><span style="display: none;">View Showreel</span></a>
                 </footer>
             </div>
         </section>
@@ -78,7 +71,7 @@
                     </iframe>
                 </div>
 
-                <a href="#work" class="button style2 down scrolly"><span style="display: none;">Scroll Down</span></a>
+                <a href="#work" class="button style2 down smooth-scroll"><span style="display: none;">Scroll Down</span></a>
 
             </div>
         </section>
@@ -111,7 +104,7 @@
                 </div>
             </div>
 
-            <a href="#illustration" class="button style2 down anchored scrolly"><span style="display: none;">Next</span></a>
+            <a href="#illustration" class="button style2 down anchored smooth-scroll"><span style="display: none;">Next</span></a>
         </section>
 
         <!-- VENTANA FLOTANTE (MODAL) PROYECTO: ANA BANANA -->
@@ -164,7 +157,7 @@
                 </div>
             </div>
 
-            <a href="#contact" class="button style2 down anchored scrolly"><span style="display: none;">Next</span></a>
+            <a href="#contact" class="button style2 down anchored smooth-scroll"><span style="display: none;">Next</span></a>
         </section>
 
        <!-- Contact -->
@@ -378,7 +371,7 @@
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT -->
+        <!-- MOTOR JAVASCRIPT PERSONALIZADO PARA SCROLL ULTRA SUAVE Y MODAL -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -408,6 +401,48 @@
                     indicator.style.top = (scrollFraction * maxTop) + 'px';
                 }
             }
+
+            /* Desplazamiento ultra suave con control de velocidad personalizado */
+            document.addEventListener("DOMContentLoaded", function() {
+                const links = document.querySelectorAll('a.smooth-scroll');
+                
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if(targetId.startsWith('#') && targetId.length > 1) {
+                            e.preventDefault();
+                            const targetElement = document.querySelector(targetId);
+                            
+                            if(targetElement) {
+                                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                                const startPosition = window.pageYOffset;
+                                const distance = targetPosition - startPosition;
+                                const duration = 900; // Duración en milisegundos (900ms = transición suave y pausada)
+                                let start = null;
+
+                                function step(timestamp) {
+                                    if (!start) start = timestamp;
+                                    const progress = timestamp - start;
+                                    const percentage = Math.min(progress / duration, 1);
+                                    
+                                    // Curva de aceleración suave (EaseInOutCubic)
+                                    const easing = percentage < 0.5 
+                                        ? 4 * percentage * percentage * percentage 
+                                        : (percentage - 1) * (2 * percentage - 2) * (2 * percentage - 2) + 1;
+
+                                    window.scrollTo(0, startPosition + distance * easing);
+
+                                    if (progress < duration) {
+                                        window.requestAnimationFrame(step);
+                                    }
+                                }
+
+                                window.requestAnimationFrame(step);
+                            }
+                        }
+                    });
+                });
+            });
         </script>
 
         <!-- Scripts originales de la plantilla -->
