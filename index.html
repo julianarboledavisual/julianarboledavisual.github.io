@@ -86,7 +86,7 @@
 
                 <!-- Gallery Design -->
                 <div class="gallery">
-                    <article class="from-left">
+                    <article class="from-left custom-thumb-wrapper">
                         <button type="button" class="btn-card-project" onclick="openModal('modal-ana-banana')">
                             <img src="images/thumbs/ana-banana-logo.jpg" alt="Ana Banana Logo" />
                         </button>
@@ -103,13 +103,13 @@
                 <!-- Botón de cierre -->
                 <span class="close-btn" onclick="closeModal('modal-ana-banana')">&times;</span>
                 
-                <!-- Barra indicadora lateral estilo scroll de Behance -->
+                <!-- Barra indicadora lateral estilo Behance -->
                 <div class="behance-side-scroll-indicator">
                     <div class="scroll-track"><div class="scroll-thumb"></div></div>
                 </div>
 
                 <div class="case-study-scroll" onscroll="updateScrollIndicator(this)">
-                    <!-- Imagen única continua estilo Behance (La miniatura ya forma parte de esta lámina) -->
+                    <!-- Imagen continua estilo Behance -->
                     <div class="project-block">
                         <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
                     </div>
@@ -195,9 +195,17 @@
             </ul>
         </footer>
 
-        <!-- ESTILOS CSS ESTILO BEHANCE -->
+        <!-- ESTILOS CSS CORREGIDOS PARA LA MINIATURA HORIZONTAL -->
         <style>
-        /* Miniatura con sombra interactiva al pasar el mouse */
+        /* Neutralizar restricciones de altura de la plantilla en el artículo de la miniatura */
+        .custom-thumb-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            background: transparent !important;
+        }
+
+        /* Botón de miniatura con proporción panorámica completa y sombra interactiva */
         .btn-card-project {
             background: none;
             border: none;
@@ -221,7 +229,8 @@
             height: auto !important;
             display: block;
             border-radius: 8px;
-            object-fit: contain !important;
+            aspect-ratio: 16 / 9 !important;
+            object-fit: cover !important;
         }
 
         /* Fondo oscuro translúcido del modal */
@@ -250,7 +259,7 @@
             overflow: hidden;
         }
 
-        /* Botón de cierre (X) flotante estático en la esquina superior derecha */
+        /* Botón de cierre (X) flotante */
         .close-btn {
             position: absolute;
             top: 20px; 
@@ -271,7 +280,7 @@
         }
         .close-btn:hover { background: #e74c3c; transform: scale(1.05); }
 
-        /* Área deslizante interna donde vive la imagen continua del proyecto */
+        /* Área deslizante interna */
         .case-study-scroll {
             width: 100%;
             height: 100%;
@@ -293,7 +302,7 @@
             background: #999;
         }
 
-        /* Imagen de proyecto sin márgenes blancos, abarcando todo el ancho */
+        /* Imagen de proyecto sin márgenes blancos */
         .project-block {
             width: 100%;
             margin: 0;
@@ -306,7 +315,7 @@
             display: block;
         }
 
-        /* Indicador de scroll lateral flotante (estilo barra de progreso) */
+        /* Indicador de scroll lateral flotante */
         .behance-side-scroll-indicator {
             position: absolute;
             right: 15px;
@@ -337,13 +346,13 @@
             transition: background 0.2s;
         }
 
-        /* Bloquear scripts viejos de la plantilla */
+        /* Bloquear scripts viejos */
         .poptrox-popup, .image-overlay, .zoom-overlay {
             display: none !important;
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT Y CONTROL DE SCROLL LATERAL -->
+        <!-- MOTOR JAVASCRIPT -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -359,7 +368,6 @@
                 }
             }
 
-            /* Función que mueve la barrita lateral derecha conforme el usuario hace scroll en el caso de estudio */
             function updateScrollIndicator(element) {
                 const scrollTop = element.scrollTop;
                 const scrollHeight = element.scrollHeight - element.clientHeight;
