@@ -84,7 +84,7 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Gallery Design con animación de entrada original de la plantilla ("from-left") -->
+                <!-- Gallery Design -->
                 <div class="gallery">
                     <article class="from-left">
                         <button type="button" class="btn-card-project" onclick="openModal('modal-ana-banana')">
@@ -100,22 +100,18 @@
         <!-- VENTANA FLOTANTE (MODAL) PROYECTO: ANA BANANA -->
         <div id="modal-ana-banana" class="custom-modal" onclick="closeModalOnOuterClick(event, 'modal-ana-banana')">
             <div class="modal-content">
+                <!-- Botón de cierre -->
                 <span class="close-btn" onclick="closeModal('modal-ana-banana')">&times;</span>
                 
-                <div class="case-study-scroll">
-                    <header class="modal-header">
-                        <h2>Ana Banana Regalos</h2>
-                        <p>Branding, Packaging & Ilustración</p>
-                    </header>
+                <!-- Barra indicadora lateral estilo scroll de Behance -->
+                <div class="behance-side-scroll-indicator">
+                    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+                </div>
 
-                    <!-- Imagen larga de caso de estudio sin bordes blancos -->
+                <div class="case-study-scroll" onscroll="updateScrollIndicator(this)">
+                    <!-- Imagen única continua estilo Behance (La miniatura ya forma parte de esta lámina) -->
                     <div class="project-block">
                         <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
-                    </div>
-
-                    <!-- Indicador visual flotante de scroll -->
-                    <div class="scroll-indicator">
-                        <span>Desliza para ver todo el proyecto ↓</span>
                     </div>
                 </div>
             </div>
@@ -199,9 +195,9 @@
             </ul>
         </footer>
 
-        <!-- ESTILOS CSS REFINADOS -->
+        <!-- ESTILOS CSS ESTILO BEHANCE -->
         <style>
-        /* Botón de miniatura con sombra, bordes redondeados y proporción completa sin cortes */
+        /* Miniatura con sombra interactiva al pasar el mouse */
         .btn-card-project {
             background: none;
             border: none;
@@ -228,7 +224,7 @@
             object-fit: contain !important;
         }
 
-        /* Fondo oscuro translúcido de la ventana emergente */
+        /* Fondo oscuro translúcido del modal */
         .custom-modal {
             display: none; 
             position: fixed; 
@@ -237,93 +233,117 @@
             width: 100%; height: 100%; 
             background-color: rgba(15, 17, 23, 0.9);
             backdrop-filter: blur(5px);
-            overflow-y: auto;
         }
 
-        /* Ventana blanca interior ajustada de lado a lado para eliminar bordes blancos sobrantes */
+        /* Contenedor principal de la ventana modal estilo Behance */
         .modal-content {
             position: relative;
             background-color: #ffffff;
-            margin: 3% auto;
-            padding: 2rem 0 0 0;
+            margin: 2vh auto;
             width: 90%;
             max-width: 1000px;
+            height: 94vh;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
-        /* Botón de cierre (X) flotante sobre la imagen */
+        /* Botón de cierre (X) flotante estático en la esquina superior derecha */
         .close-btn {
-            position: fixed;
-            top: 25px; 
-            right: 35px;
+            position: absolute;
+            top: 20px; 
+            right: 25px;
             color: #ffffff;
-            background: rgba(0, 0, 0, 0.6);
-            width: 45px;
-            height: 45px;
+            background: rgba(0, 0, 0, 0.7);
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             cursor: pointer;
-            z-index: 10100;
-            transition: background 0.2s;
+            z-index: 10200;
+            transition: background 0.2s, transform 0.2s;
         }
-        .close-btn:hover { background: #e74c3c; }
+        .close-btn:hover { background: #e74c3c; transform: scale(1.05); }
 
-        /* Encabezados dentro del modal */
-        .modal-header { 
-            text-align: center; 
-            margin-bottom: 1.5rem; 
-            padding: 0 2rem;
+        /* Área deslizante interna donde vive la imagen continua del proyecto */
+        .case-study-scroll {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+            scroll-behavior: smooth;
         }
-        .modal-header h2 { color: #1c1e22 !important; font-size: 1.8rem; margin-bottom: 0.2rem; }
-        .modal-header p { color: #666; font-size: 0.95rem; }
+        .case-study-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .case-study-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .case-study-scroll::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        .case-study-scroll::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
 
-        /* Contenedor de la imagen sin márgenes laterales para que llegue al borde exacto */
-        .case-study-scroll .project-block {
+        /* Imagen de proyecto sin márgenes blancos, abarcando todo el ancho */
+        .project-block {
             width: 100%;
             margin: 0;
             padding: 0;
         }
-        .case-study-scroll img {
+        .project-block img {
             width: 100% !important;
             max-width: 100% !important;
             height: auto !important;
             display: block;
-            border-radius: 0;
         }
 
-        /* Indicador flotante para avisar que hay contenido abajo (Scroll) */
-        .scroll-indicator {
-            text-align: center;
-            background: linear-gradient(to top, rgba(28,30,34,0.95), rgba(28,30,34,0.85));
-            color: #ffffff;
-            padding: 1rem;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            animation: bounceIndicator 2s infinite;
+        /* Indicador de scroll lateral flotante (estilo barra de progreso) */
+        .behance-side-scroll-indicator {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 120px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 10100;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .scroll-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .scroll-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: background 0.2s;
         }
 
-        @keyframes bounceIndicator {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-5px); }
-            60% { transform: translateY(-3px); }
-        }
-
-        /* Bloquear por completo cualquier script viejo */
+        /* Bloquear scripts viejos de la plantilla */
         .poptrox-popup, .image-overlay, .zoom-overlay {
             display: none !important;
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT -->
+        <!-- MOTOR JAVASCRIPT Y CONTROL DE SCROLL LATERAL -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -338,9 +358,25 @@
                     closeModal(modalId);
                 }
             }
+
+            /* Función que mueve la barrita lateral derecha conforme el usuario hace scroll en el caso de estudio */
+            function updateScrollIndicator(element) {
+                const scrollTop = element.scrollTop;
+                const scrollHeight = element.scrollHeight - element.clientHeight;
+                if (scrollHeight <= 0) return;
+                const scrollFraction = scrollTop / scrollHeight;
+                
+                const indicator = element.parentElement.querySelector('.scroll-thumb');
+                if (indicator) {
+                    const trackHeight = element.parentElement.querySelector('.scroll-track').clientHeight;
+                    const thumbHeight = indicator.clientHeight;
+                    const maxTop = trackHeight - thumbHeight;
+                    indicator.style.top = (scrollFraction * maxTop) + 'px';
+                }
+            }
         </script>
 
-        <!-- Scripts originales completos de la plantilla (para recuperar el Scrolly y animaciones suaves) -->
+        <!-- Scripts originales -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.poptrox.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
