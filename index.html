@@ -11,10 +11,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <!-- Forzar desplazamiento suave nativo para corregir el salto de sección -->
+        <style>
+            html {
+                scroll-behavior: smooth !important;
+            }
+        </style>
     </head>
     <body class="is-preload">
 
-        <!-- Header (Con tus estilos originales perfectamente alineados) -->
+        <!-- Header -->
         <header id="header" style="background: #e6e8eb !important; border-bottom: 1px solid #dcdee2 !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;">
             <h1 style="display: flex !important; align-items: center !important; gap: 14px !important; height: 100% !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important;">
                 <img src="logo_motionchuaz.svg" alt="Motion Chuaz Logo" style="width: 65px !important; height: auto !important; flex-shrink: 0 !important; display: block !important; margin: 0 !important; padding: 0 !important;" />
@@ -84,7 +91,7 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Grilla de proyectos en 2 columnas con animaciones de entrada nativas -->
+                <!-- Grilla de proyectos en 2 columnas -->
                 <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
@@ -93,7 +100,7 @@
                         </a>
                     </article>
 
-                    <!-- Espacio listo para tu siguiente proyecto (Alianza) -->
+                    <!-- Espacio para el próximo proyecto -->
                     <!--
                     <article class="from-right custom-card-article">
                         <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-alianza'); return false;">
