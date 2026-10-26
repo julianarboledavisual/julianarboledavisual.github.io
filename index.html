@@ -71,10 +71,7 @@
                     </iframe>
                 </div>
 
-                <a href="#work" style="display: inline-block; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: color 0.3s ease; text-shadow: 0 1px 5px rgba(0,0,0,0.8);">
-                    <span style="display: block; margin-bottom: 0.2rem;">Scroll Down</span>
-                    <span style="font-size: 1.1rem; display: block; line-height: 1;">↓</span>
-                </a>
+                <a href="#work" class="button style2 down"><span style="display: none;">Scroll Down</span></a>
 
             </div>
         </section>
@@ -87,7 +84,7 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Gallery Design (Ana Banana - Minuatura completa sin recortes y con el efecto sombra chulo) -->
+                <!-- Gallery Design con animación de entrada original de la plantilla ("from-left") -->
                 <div class="gallery">
                     <article class="from-left">
                         <button type="button" class="btn-card-project" onclick="openModal('modal-ana-banana')">
@@ -111,12 +108,12 @@
                         <p>Branding, Packaging & Ilustración</p>
                     </header>
 
-                    <!-- Imagen larga de caso de estudio a ancho completo de la caja -->
+                    <!-- Imagen larga de caso de estudio sin bordes blancos -->
                     <div class="project-block">
                         <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
                     </div>
 
-                    <!-- Indicador visual flotante para avisar al usuario que hay que scrolear -->
+                    <!-- Indicador visual flotante de scroll -->
                     <div class="scroll-indicator">
                         <span>Desliza para ver todo el proyecto ↓</span>
                     </div>
@@ -202,9 +199,9 @@
             </ul>
         </footer>
 
-        <!-- ESTILOS CSS CORREGIDOS -->
+        <!-- ESTILOS CSS REFINADOS -->
         <style>
-        /* Botón de miniatura con tu animación de sombra al pasar el cursor */
+        /* Botón de miniatura con sombra, bordes redondeados y proporción completa sin cortes */
         .btn-card-project {
             background: none;
             border: none;
@@ -223,7 +220,6 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
-        /* Garantiza que la miniatura se vea completa sin recortes extraños */
         .btn-card-project img {
             width: 100% !important;
             height: auto !important;
@@ -244,45 +240,61 @@
             overflow-y: auto;
         }
 
-        /* Ventana blanca interior optimizada para que la imagen toque los bordes laterales sin espacios vacíos */
+        /* Ventana blanca interior ajustada de lado a lado para eliminar bordes blancos sobrantes */
         .modal-content {
             position: relative;
             background-color: #ffffff;
             margin: 3% auto;
-            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            padding: 2rem 0 0 0;
             width: 90%;
             max-width: 1000px;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
         }
 
-        /* Botón de cierre (X) */
+        /* Botón de cierre (X) flotante sobre la imagen */
         .close-btn {
-            position: absolute;
-            top: 15px; right: 25px;
-            color: #1c1e22;
-            font-size: 32px;
+            position: fixed;
+            top: 25px; 
+            right: 35px;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.6);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
             font-weight: bold;
             cursor: pointer;
-            z-index: 10;
+            z-index: 10100;
+            transition: background 0.2s;
         }
-        .close-btn:hover { color: #e74c3c; }
+        .close-btn:hover { background: #e74c3c; }
 
         /* Encabezados dentro del modal */
-        .modal-header { text-align: center; margin-bottom: 1.5rem; }
+        .modal-header { 
+            text-align: center; 
+            margin-bottom: 1.5rem; 
+            padding: 0 2rem;
+        }
         .modal-header h2 { color: #1c1e22 !important; font-size: 1.8rem; margin-bottom: 0.2rem; }
         .modal-header p { color: #666; font-size: 0.95rem; }
 
-        /* Contenedor de la imagen de proyecto */
+        /* Contenedor de la imagen sin márgenes laterales para que llegue al borde exacto */
         .case-study-scroll .project-block {
             width: 100%;
+            margin: 0;
+            padding: 0;
         }
         .case-study-scroll img {
             width: 100% !important;
             max-width: 100% !important;
             height: auto !important;
             display: block;
-            border-radius: 4px;
+            border-radius: 0;
         }
 
         /* Indicador flotante para avisar que hay contenido abajo (Scroll) */
@@ -290,10 +302,7 @@
             text-align: center;
             background: linear-gradient(to top, rgba(28,30,34,0.95), rgba(28,30,34,0.85));
             color: #ffffff;
-            padding: 0.8rem;
-            margin-top: -10px;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
+            padding: 1rem;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -331,12 +340,12 @@
             }
         </script>
 
-        <!-- Scripts originales -->
+        <!-- Scripts originales completos de la plantilla (para recuperar el Scrolly y animaciones suaves) -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.poptrox.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
         <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/browser.min.js`,"></script>
+        <script src="assets/js/browser.min.js"></script>
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
