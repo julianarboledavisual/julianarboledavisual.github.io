@@ -84,20 +84,24 @@
                     <p>A curated selection of visual identities, branding systems, and graphic design. Created to build strong, memorable, and scalable brand presence across physical and digital environments.</p>
                 </header>
 
-                <!-- Grilla de proyectos en 2 columnas -->
+                <!-- Grilla de proyectos en 2 columnas con efecto miniatura tipo YouTube -->
                 <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
                         <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-ana-banana'); return false;">
-                            <img src="images/thumbs/ana-banana-logo.jpg" alt="Ana Banana Logo" />
+                            <div class="youtube-preview-container">
+                                <img src="images/projects/anabanana-caso.jpg" alt="Ana Banana Preview" class="preview-img" />
+                            </div>
                         </a>
                     </article>
 
-                    <!-- Espacio para el próximo proyecto -->
+                    <!-- Espacio para el próximo proyecto (Alianza) -->
                     <!--
                     <article class="from-right custom-card-article">
                         <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-alianza'); return false;">
-                            <img src="images/thumbs/alianza-logo.jpg" alt="Alianza Logo" />
+                            <div class="youtube-preview-container">
+                                <img src="images/projects/alianza-caso.jpg" alt="Alianza Preview" class="preview-img" />
+                            </div>
                         </a>
                     </article>
                     -->
@@ -204,7 +208,7 @@
             </ul>
         </footer>
 
-        <!-- ESTILOS CSS -->
+        <!-- ESTILOS CSS CON EFECTO PREVIEW TIPO YOUTUBE -->
         <style>
         .custom-gallery-grid {
             display: flex !important;
@@ -253,14 +257,29 @@
             box-shadow: 0 18px 35px rgba(0,0,0,0.22) !important;
         }
 
-        .custom-thumb-link img {
+        /* Contenedor con relación de aspecto 16:9 y overflow oculto para el preview */
+        .youtube-preview-container {
+            width: 100% !important;
+            aspect-ratio: 16 / 9 !important;
+            position: relative !important;
+            overflow: hidden !important;
+            border-radius: 8px !important;
+            background: #ffffff !important;
+        }
+
+        /* Imagen larga dentro de la miniatura que se desliza al hacer hover */
+        .preview-img {
             width: 100% !important;
             height: auto !important;
-            display: block !important;
-            border-radius: 8px !important;
-            aspect-ratio: 16 / 9 !important;
-            object-fit: contain !important;
-            background: #f7f8f9 !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important; /* Deslizamiento suave y elegante tipo cine */
+        }
+
+        /* Al pasar el cursor, la imagen sube un 35% para revelar el contenido inferior */
+        .custom-thumb-link:hover .preview-img {
+            transform: translateY(-35%) !important;
         }
 
         .custom-modal {
@@ -371,7 +390,7 @@
         }
         </style>
 
-        <!-- MOTOR JAVASCRIPT CON VELOCIDAD LENTA Y CINEMATOGRÁFICA -->
+        <!-- MOTOR JAVASCRIPT -->
         <script>
             function openModal(modalId) {
                 document.getElementById(modalId).style.display = "block";
@@ -402,7 +421,7 @@
                 }
             }
 
-            /* Scroll ultra suave, pausado y cinematográfico (1400 milisegundos) */
+            /* Scroll cinematográfico lento (1400ms) */
             document.addEventListener("DOMContentLoaded", function() {
                 const links = document.querySelectorAll('a.smooth-scroll');
                 
@@ -417,7 +436,7 @@
                                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                                 const startPosition = window.pageYOffset;
                                 const distance = targetPosition - startPosition;
-                                const duration = 1400; // 1400ms = Movimiento sumamente suave, pausado y elegante
+                                const duration = 1400;
                                 let start = null;
 
                                 function step(timestamp) {
@@ -425,7 +444,6 @@
                                     const progress = timestamp - start;
                                     const percentage = Math.min(progress / duration, 1);
                                     
-                                    // Curva de aceleración ultra suave (EaseInOutQuart)
                                     const easing = percentage < 0.5 
                                         ? 8 * percentage * percentage * percentage * percentage 
                                         : 1 - Math.pow(-2 * percentage + 2, 4) / 2;
