@@ -99,7 +99,7 @@
                     </p>
                 </header>
 
-                <!-- Grilla de proyectos -->
+                <!-- Grilla de proyectos (2 columnas) -->
                 <div class="gallery custom-gallery-grid">
                     <!-- Proyecto 1: Ana Banana -->
                     <article class="from-left custom-card-article">
@@ -115,26 +115,52 @@
                             </div>
                         </a>
                     </article>
+
+                    <!-- Proyecto 2: Alianza Consultiva Integral -->
+                    <article class="from-right custom-card-article">
+                        <a href="javascript:void(0);" class="image fit custom-thumb-link" onclick="openModal('modal-alianza'); return false;">
+                            <div class="behance-card-preview">
+                                <img src="images/projects/alianza-caso.jpg" alt="Alianza Preview" class="preview-img" />
+                                <div class="behance-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Alianza Consultiva Integral</h3>
+                                        <span data-es="Ver Proyecto &rarr;" data-en="View Project &rarr;">View Project &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
 
             <a href="#illustration" class="button style2 down anchored smooth-scroll"><span style="display: none;">Next</span></a>
         </section>
 
-        <!-- VENTANA FLOTANTE (MODAL) PROYECTO: ANA BANANA -->
+        <!-- VENTANA FLOTANTE (MODAL) PROYECTO 1: ANA BANANA -->
         <div id="modal-ana-banana" class="custom-modal" onclick="closeModalOnOuterClick(event, 'modal-ana-banana')">
             <div class="modal-content">
-                <!-- Botón de cierre -->
                 <span class="close-btn" onclick="closeModal('modal-ana-banana')">&times;</span>
-                
-                <!-- Barra indicadora lateral estilo Behance -->
                 <div class="behance-side-scroll-indicator">
                     <div class="scroll-track"><div class="scroll-thumb"></div></div>
                 </div>
-
                 <div class="case-study-scroll" onscroll="updateScrollIndicator(this)">
                     <div class="project-block">
                         <img src="images/projects/anabanana-caso.jpg" alt="Caso de Estudio Ana Banana" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VENTANA FLOTANTE (MODAL) PROYECTO 2: ALIANZA -->
+        <div id="modal-alianza" class="custom-modal" onclick="closeModalOnOuterClick(event, 'modal-alianza')">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-alianza')">&times;</span>
+                <div class="behance-side-scroll-indicator">
+                    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+                </div>
+                <div class="case-study-scroll" onscroll="updateScrollIndicator(this)">
+                    <div class="project-block">
+                        <img src="images/projects/alianza-caso.jpg" alt="Caso de Estudio Alianza Consultiva Integral" />
                     </div>
                 </div>
             </div>
@@ -227,7 +253,6 @@
 
         <!-- ESTILOS CSS -->
         <style>
-        /* Bloquear el estiramiento descontrolado del textarea */
         form textarea {
             resize: none !important;
         }
@@ -507,7 +532,7 @@
                 document.body.classList.remove('is-preload');
             });
 
-            /* Lógica del interruptor de idioma (inicia en Inglés) */
+            /* Lógica del interruptor de idioma */
             let currentLang = 'en';
 
             function toggleLanguage() {
@@ -590,7 +615,6 @@
                 optEn.classList.add('active');
                 optEs.classList.remove('active');
 
-                // Aplicar textos en inglés al cargar
                 const elements = document.querySelectorAll('[data-es]');
                 elements.forEach(el => {
                     el.innerHTML = el.getAttribute('data-en');
