@@ -227,6 +227,11 @@
 
         <!-- ESTILOS CSS -->
         <style>
+        /* Bloquear el estiramiento descontrolado del textarea */
+        form textarea {
+            resize: none !important;
+        }
+
         .lang-switch-container {
             display: flex;
             align-items: center;
@@ -574,7 +579,7 @@
                 }
             }
 
-            /* Scroll cinematográfico lento (1400ms) para todos los enlaces, incluido el logotipo Home */
+            /* Scroll cinematográfico lento (1400ms) */
             document.addEventListener("DOMContentLoaded", function() {
                 currentLang = 'en';
                 const slider = document.getElementById('lang-slider');
