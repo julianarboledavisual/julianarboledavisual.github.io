@@ -32,11 +32,15 @@
                     <li><a href="#contact" class="smooth-scroll" data-es="Contacto" data-en="Contact">Contact</a></li>
                 </ul>
 
-                <!-- Interruptor de idioma (Inicia en Inglés) -->
+                <!-- Interruptor de idioma con banderas gráficas garantizadas -->
                 <div class="lang-switch-container" onclick="toggleLanguage()" title="Cambiar idioma / Change language">
-                    <span id="lang-es" class="lang-option">🇨🇴 ESP</span>
+                    <span id="lang-es" class="lang-option">
+                        <img src="https://flagcdn.com/24x18/co.png" alt="Colombia" style="width: 15px; height: 11px; vertical-align: middle; margin-right: 2px;" /> ESP
+                    </span>
                     <div id="lang-slider" class="lang-slider en"></div>
-                    <span id="lang-en" class="lang-option active">🇺🇸 ENG</span>
+                    <span id="lang-en" class="lang-option active">
+                        <img src="https://flagcdn.com/24x18/us.png" alt="USA" style="width: 15px; height: 11px; vertical-align: middle; margin-right: 2px;" /> ENG
+                    </span>
                 </div>
             </nav>
         </header>
@@ -250,7 +254,6 @@
             resize: none !important;
         }
 
-        /* Estilos del pie de página delgado */
         #footer {
             background-color: #2c2e33 !important;
         }
@@ -264,7 +267,7 @@
             align-items: center;
             justify-content: space-between;
             position: relative;
-            width: 95px;
+            width: 98px;
             height: 32px;
             background: #dcdfe3;
             border-radius: 20px;
@@ -275,11 +278,13 @@
             transition: background 0.3s ease;
         }
         .lang-option {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
             color: #555;
             z-index: 2;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
         }
         .lang-option.active {
             color: #ffffff;
@@ -288,7 +293,7 @@
             position: absolute;
             top: 3px;
             left: 3px;
-            width: 44px;
+            width: 46px;
             height: 26px;
             background: #2c2e33;
             border-radius: 16px;
